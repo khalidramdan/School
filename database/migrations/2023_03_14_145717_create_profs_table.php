@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('profs', function (Blueprint $table) {
-            $table->foreign(['departement_id'], 'departement_fk')->references(['id'])->on('departements')->onUpdate('CASCADE')->onDelete('CASCADE');
+        Schema::create('profs', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('departement_id')->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('profs', function (Blueprint $table) {
-            $table->dropForeign('departement_fk');
-        });
+        Schema::dropIfExists('profs');
     }
 };

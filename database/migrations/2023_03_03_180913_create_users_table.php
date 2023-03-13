@@ -14,15 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->comment('');
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('CIN');
+            $table->string('cin')->nullable();
+            $table->string('adresse')->nullable();
+            $table->date('dateNaissance')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('description')->nullable();
             $table->string('email')->nullable();
             $table->string('password')->nullable();
-            $table->integer('role_id')->nullable()->index('fk_roles_users');
-            $table->string('adresse')->nullable();
+            $table->foreignId('role_id')->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
             $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
