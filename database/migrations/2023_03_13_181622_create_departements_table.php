@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign(['role_id'], 'fk_roles_users')->references(['id'])->on('roles')->onUpdate('CASCADE')->onDelete('CASCADE');
+        Schema::create('departements', function (Blueprint $table) {
+            $table->id();
+            $table->string('departement_nom');
         });
     }
 
@@ -25,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('fk_roles_users');
-        });
+        Schema::dropIfExists('departements');
     }
 };
