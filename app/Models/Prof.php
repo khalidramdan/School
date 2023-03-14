@@ -34,10 +34,10 @@ class Prof extends Model
      */
     public function departement()
     {
-        return $this->belongsTo(departement::class);
+        return $this->belongsTo(Departement::class);
     }
 
     public function user(){
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 }

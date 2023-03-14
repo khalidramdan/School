@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Role;
 use Illuminate\Contracts\Auth\Authenticatable;
 
 /**
@@ -22,7 +21,7 @@ class User extends Model implements Authenticatable
     /**
      * @var array
      */
-    protected $fillable = ['role_id', 'email', 'password', 'remember_token', 'created_at', 'updated_at'];
+    protected $fillable = ['role_id', 'nom' ,'prenom' ,'cin' ,'adresse' ,'dateNaissance' ,'tel' ,'gender' ,'description' , 'email', 'password', 'remember_token', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -30,5 +29,10 @@ class User extends Model implements Authenticatable
     public function role()
     {
         return $this->belongsTo(role::class);
+    }
+
+    public function prof()
+    {
+        return $this->hasOne(prof::class);
     }
 }
