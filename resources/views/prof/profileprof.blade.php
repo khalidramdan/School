@@ -13,7 +13,7 @@
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0);">Professors</a></li>
+                        <li class="breadcrumb-item active"><a href="{{route('allprof')}}">Professors</a></li>
                         <li class="breadcrumb-item active"><a href="javascript:void(0);">Professor Profile</a></li>
                     </ol>
                 </div>
@@ -24,9 +24,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
-                                <div class="text-center p-3 overlay-box" style="background-image: url(images/big/img1.jpg);">
+                                <div class="text-center p-3 overlay-box" style="background-image: url();">
                                     <div class="profile-photo">
-                                        <img src="images/profile/profile.png" width="100" class="img-fluid rounded-circle" alt="">
+                                        <img src="{{asset('storage/'.$user->image)}}" width="100" class="img-fluid rounded-circle" alt="">
                                     </div>
                                     <h3 class="mt-3 mb-1 text-white">Deangelo Sena</h3>
                                     <p class="text-white mb-0">Senior Manager</p>
@@ -73,7 +73,7 @@
                                         <div id="about-me" class="tab-pane fade active show">
                                             <div class="profile-about-me">
                                                 <div class="pt-4 border-bottom-1 pb-4">
-                                                    <p>{{$prof->description}}</p>
+                                                    <p>{{$user->description}}</p>
                                                 </div>
                                             </div>
                                             <div class="profile-personal-info">
@@ -83,7 +83,7 @@
                                                         <h5 class="f-w-500">Name <span class="pull-right">:</span>
                                                         </h5>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->nom .' '. $prof->prenom}}</span>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$user->nom .' '. $user->prenom}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
@@ -91,7 +91,7 @@
                                                         <h5 class="f-w-500">Email <span class="pull-right">:</span>
                                                         </h5>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->user->email}}</span>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->email)? $user->email : ''}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
@@ -106,42 +106,35 @@
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                                                         <h5 class="f-w-500">Location <span class="pull-right">:</span></h5>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->adresse}}</span>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->adresse)? $user->adresse : ''}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                                                         <h5 class="f-w-500">Gender <span class="pull-right">:</span></h5>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->gender}}</span>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->gender)? $user->gender : ''}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                                                         <h5 class="f-w-500">Phone <span class="pull-right">:</span></h5>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->tel}}</span>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->tel)? $user->tel : ''}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                                                         <h5 class="f-w-500">Cin <span class="pull-right">:</span></h5>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->cin}}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-4">
-                                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                                        <h5 class="f-w-500">Date d'inscription <span class="pull-right">:</span></h5>
-                                                    </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->dateInscription}}</span>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->cin)? $user->cin : ''}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                                                         <h5 class="f-w-500">Departement <span class="pull-right">:</span></h5>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$prof->departement->departement_nom}}</span>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->prof->departement)? $user->prof->departement->departement_nom : ''}}</span>
                                                     </div>
                                                 </div>
                                             </div>

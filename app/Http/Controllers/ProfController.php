@@ -10,46 +10,44 @@ use App\Models\Prof;
 use App\Http\Requests\ProfRequest;
 use App\Models\Departement;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class ProfController extends Controller
 {
     public function create(){
         $departements = Departement::all();
-        return view('prof.addprof',compact('departements'));
+        $to = route('storeprof');
+        $title = 'Ajouter professeur';
+        return view('prof.addprof',compact('departements','to','title'));
     }
 
     public function store(ProfRequest $request){
         // store user
         $user = new User();
-        $user->email = $request->prenom . $request->nom . '@prof';
-        $user->password = encrypt($request->prenom . $request->nom);
-        $user->role_id = 2;
-        $user->save();
-
-        $last_user = User::latest()->first()->id;
-
-        
-        // store prof
-        $prof = new prof();
-        if($prof->image){
-            $file = $request->file('image');
-            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/images', $filename);
-            $prof->image = $filename;
+        if($request->image){
+            $path = $request->file('image')->store('users/profs');
+            $user->image = $path;
         }
-        $prof->nom = $request->nom;
-        $prof->prenom = $request->prenom;
-        $prof->cin = $request->cin;
-        $prof->adresse = $request->adresse;
-        $prof->dateInscription = $request->dateInscription;
-        $prof->tel = $request->tel;
-        $prof->gender = $request->gender;
-        $prof->departement_id = $request->departement_id;
-        $prof->dateNaissance = $request->dateNaissance;
-        $prof->user_id = $last_user;
-        $prof->description = $request->description;
-        $prof->save();
-        return redirect('/allProf');
+        $user->email = $request->prenom . $request->nom . '@prof';
+        $user->password = hash::make($request->prenom . $request->nom);
+        $user->nom = $request->nom;
+        $user->prenom = $request->prenom;
+        $user->cin = $request->cin;
+        $user->adresse = $request->adresse;
+        $user->tel = $request->tel;
+        $user->gender = $request->gender;
+        $user->dateNaissance = $request->dateNaissance;
+        $user->description = $request->description;
+        $role=Role::find(2);
+        if($role){
+            if($role->users()->save($user)){
+                // store prof
+                $prof = new prof();
+                $prof->departement_id = $request->departement_id;
+                $user->prof()->save($prof);
+                return redirect('/allProf');
+            }
+        }
     }
 
     public function showall(){
@@ -58,28 +56,29 @@ class ProfController extends Controller
     }
 
     public function edit($id){
-        $prof = Prof::find($id);
+        $user = User::find($id);
         $departements = Departement::all();
-        return view('prof.editprof', compact('prof','departements'));
+        $to = route('updateprof', ['id' => $id]);
+        $title = 'Modifier professeur';
+        return view('prof.addprof', compact('user','departements', 'to', 'title'));
     }
 
-    public function update(Request $request, $id){
-        $prof = Prof::find($id);
-        $prof->update($request->all());
-        return redirect()->route('editprof', $prof->id);
+    public function update(ProfRequest $request, $id){
+        $user = User::find($id);
+        $user->update($request->all());
+        return redirect()->route('editprof', $user->id);
     }
 
     public function destroy($id)
     {
-        $prof = Prof::find($id);
-        $prof->delete();
-
+        $user = User::find($id);
+        $user->delete();
         return redirect()->route('allprof')->with('success', 'Prof deleted successfully.');
     }
 
     public function profile($id){
-        $prof = Prof::find($id);
-        $age = Carbon::parse($prof->dateNaissance)->age;
-        return view('prof.profileprof',compact('prof','age'));
+        $user = User::find($id);
+        $age = Carbon::parse($user->dateNaissance)->age;
+        return view('prof.profileprof',compact('user','age'));
     }
 }

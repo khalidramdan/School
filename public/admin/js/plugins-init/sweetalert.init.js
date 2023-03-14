@@ -1,1 +1,70 @@
-document.querySelector(".sweet-wrong").onclick = function () { sweetAlert("Oops...", "Something went wrong !!", "error") }, document.querySelector(".sweet-message").onclick = function () { swal("Hey, Here's a message !!") }, document.querySelector(".sweet-text").onclick = function () { swal("Hey, Here's a message !!", "It's pretty, isn't it?") }, document.querySelector(".sweet-success").onclick = function () { swal("Hey, Good job !!", "You clicked the button !!", "success") }, document.querySelector(".sweet-confirm").onclick = function () { swal({ title: "Are you sure to delete ?", text: "You will not be able to recover this imaginary file !!", type: "warning", showCancelButton: !0, confirmButtonColor: "#DD6B55", confirmButtonText: "Yes, delete it !!", closeOnConfirm: !1 }, function () { swal("Deleted !!", "Hey, your imaginary file has been deleted !!", "success") }) }, document.querySelector(".sweet-success-cancel").onclick = function () { swal({ title: "Are you sure to delete ?", text: "You will not be able to recover this imaginary file !!", type: "warning", showCancelButton: !0, confirmButtonColor: "#DD6B55", confirmButtonText: "Yes, delete it !!", cancelButtonText: "No, cancel it !!", closeOnConfirm: !1, closeOnCancel: !1 }, function (e) { e ? swal("Deleted !!", "Hey, your imaginary file has been deleted !!", "success") : swal("Cancelled !!", "Hey, your imaginary file is safe !!", "error") }) }, document.querySelector(".sweet-image-message").onclick = function () { swal({ title: "Sweet !!", text: "Hey, Here's a custom image !!", imageUrl: "../assets/images/hand.jpg" }) }, document.querySelector(".sweet-html").onclick = function () { swal({ title: "Sweet !!", text: "<span style='color:#ff0000'>Hey, you are using HTML !!<span>", html: !0 }) }, document.querySelector(".sweet-auto").onclick = function () { swal({ title: "Sweet auto close alert !!", text: "Hey, i will close in 2 seconds !!", timer: 2e3, showConfirmButton: !1 }) }, document.querySelector(".sweet-prompt").onclick = function () { swal({ title: "Enter an input !!", text: "Write something interesting !!", type: "input", showCancelButton: !0, closeOnConfirm: !1, animation: "slide-from-top", inputPlaceholder: "Write something" }, function (e) { return !1 !== e && ("" === e ? (swal.showInputError("You need to write something!"), !1) : void swal("Hey !!", "You wrote: " + e, "success")) }) }, document.querySelector(".sweet-ajax").onclick = function () { swal({ title: "Sweet ajax request !!", text: "Submit to run ajax request !!", type: "info", showCancelButton: !0, closeOnConfirm: !1, showLoaderOnConfirm: !0 }, function () { setTimeout(function () { swal("Hey, your ajax request finished !!") }, 2e3) }) };
+$(".sweet-confirm").click(function (e) {
+    e.preventDefault();
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-danger',
+            cancelButton: 'btn btn-success'
+        },
+        buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+        title: 'Avez-vous sûr?',
+        text: "Vous ne pourrez pas revenir en arrière !!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, Supprimer!',
+        cancelButtonText: 'No, Annuller!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            debugger
+            $(e.target.form).submit();
+            swalWithBootstrapButtons.fire(
+                'Supprimé!',
+                'Ce professeur a été supprimé.',
+                'success'
+            )
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            debugger
+            swalWithBootstrapButtons.fire(
+                'Annulé',
+                'Cette opération est annulée :)',
+                'error'
+            )
+        }
+    })
+
+    // Swal.fire({
+    //     title: 'Are you sure to delete ?',
+    //     showDenyButton: true,
+    //     showCancelButton: true,
+    //     confirmButtonText: 'Delete',
+    //     denyButtonText: `Don't Delete`,
+    // }).then((result) => {
+    //     /* Read more about isConfirmed, isDenied below */
+    //     if (result.isConfirmed) {
+    //         Swal.fire('Saved!', '', 'success')
+    //     } else if (result.isDenied) {
+    //         Swal.fire('Changes are not saved', '', 'info')
+    //     }
+    // })
+
+    // swal({
+    //     title: "Are you sure to delete ?",
+    //     text: "You will not be able to recover this imaginary file !!",
+    //     type: "warning",
+    //     showCancelButton: !0,
+    //     confirmButtonColor: "#DD6B55",
+    //     confirmButtonText: "Yes, delete it !!",
+    //     // closeOnConfirm: !1
+    // },
+    // function () {
+    //     debugger;
+    //     $("#"+e.target.form).submit();
+    //     swal("Deleted !!", "Hey, your imaginary file has been deleted !!", "success")
+    // })
+});
