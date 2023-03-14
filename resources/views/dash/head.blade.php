@@ -19,5 +19,5 @@
     <link rel="stylesheet" href="{{asset('admin/vendor/pickadate/themes/default.css')}}">
     <link rel="stylesheet" href="{{asset('admin/vendor/pickadate/themes/default.date.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/datatables/css/jquery.dataTables.min.css')}}">
-
+    @yield('custom-style')
 </head>

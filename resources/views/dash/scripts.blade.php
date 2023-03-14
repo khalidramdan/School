@@ -38,3 +38,5 @@
 
 {{-- sweetAlert --}}
 <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+<script src="{{asset('admin\js\plugins-init\sweetalert.init.js')}}"></script>
+@yield('custom-scripts')

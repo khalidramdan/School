@@ -24,10 +24,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Start Prof Controller
 Route::get('/addProf',[ProfController::class,'create'])->name('createprof');
+Route::put('/editprof/update/{id}', [ProfController::class, 'update'])->name('updateprof');
 Route::get('/allProf',[ProfController::class,'showall'])->name('allprof');
 Route::post('/storeProf',[ProfController::class,'store'])->name('storeprof');
 Route::get('/editprof/{id}',[ProfController::class,'edit'])->name('editprof');
-Route::put('/editprof/update/{id}', [ProfController::class, 'update'])->name('updateprof');
 Route::delete('/deleteprof/{id}', [ProfController::class, 'destroy'])->name('deleteprof');
 Route::get('/profileprof/{id}',[ProfController::class,'profile'])->name('profileprof');
 // End Prof Controller
