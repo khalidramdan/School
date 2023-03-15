@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfController;
-
+use App\Http\Controllers\DepartmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +31,11 @@ Route::get('/editprof/{id}',[ProfController::class,'edit'])->name('editprof');
 Route::delete('/deleteprof/{id}', [ProfController::class, 'destroy'])->name('deleteprof');
 Route::get('/profileprof/{id}',[ProfController::class,'profile'])->name('profileprof');
 // End Prof Controller
+//Start departement controller
+Route::get('/departement',[DepartmentController::class,'index']);
+Route::get('/alldepartement',[DepartmentController::class,'create'])->name('alldepartement');
+Route::post('/add_departement',[DepartmentController::class,'store'])->name('add_departement');
+Route::get('/edit_departement/{id}',[DepartmentController::class,'edit']);
+Route::put('/update_departement',[DepartmentController::class,'update']);
+Route::delete('/delete_departement',[DepartmentController::class,'destroy']);
+//End departement controller
