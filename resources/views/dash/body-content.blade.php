@@ -1,5 +1,4 @@
 <div class="content-body">
-    <button onclick="swal('Hello world!')">Click me</button>
     <!-- row -->
     <div class="container-fluid">
             {{-- <h1>{{Auth::user()->role->role_nom}}</h1> --}}
