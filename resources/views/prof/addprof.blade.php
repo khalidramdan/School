@@ -85,22 +85,8 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label class="form-label">Department</label>
-                                            <select class="form-control" name="departement_id">
-                                                <option value="" hidden selected>Departement</option>
-                                                @foreach ($departements as $departement)
-                                                    <option value="{{$departement->id}}">{{$departement->departement_nom}}</option>
-                                                @endforeach
-                                            </select>
-                                            @if($errors->has('departement_id'))
-                                                <span class="error" style="color:red">{{ $errors->first('departement_id') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="form-group">
                                             <label class="form-label">Date de Naissance</label>
-                                            <input class="datepicker-default form-control" value="{{(isset($user))? $user->dateNaissance : ''}}" id="datepicker1" name="dateNaissance">
+                                            <input type="date" class="datepicker-default form-control" value="{{(isset($user))? $user->dateNaissance : ''}}" id="datepicker1" name="dateNaissance">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
@@ -116,7 +102,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="submit" class="btn btn-light">Cencel</button>
+                                        <button type="reset" class="btn btn-light"><a href="{{route('allprof')}}" style="text-decoration: none">Cancel</a></button>
                                     </div>
                                 </div>
                             </form>
