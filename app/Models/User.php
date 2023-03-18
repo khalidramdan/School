@@ -35,4 +35,9 @@ class User extends Model implements Authenticatable
     {
         return $this->hasOne(prof::class);
     }
+
+    public function SG()
+    {
+        return $this->hasOne(Surveillant_Generale::class);
+    }
 }

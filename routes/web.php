@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\ServeillantGeneralController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +40,12 @@ Route::get('/edit_departement/{id}',[DepartmentController::class,'edit']);
 Route::put('/update_departement',[DepartmentController::class,'update']);
 Route::delete('/delete_departement',[DepartmentController::class,'destroy']);
 //End departement controller
+//Start Surveillant General controller
+Route::get('/addSurveillantGeneral',[ServeillantGeneralController::class, 'create'])->name('createSG');
+Route::post('/storeSurveillantGeneral',[ServeillantGeneralController::class,'store'])->name('storeSG');
+Route::get('/allSurveillantGeneral',[ServeillantGeneralController::class,'showall'])->name('allSG');
+Route::delete('/deleteSurveillantGeneral/{id}', [ServeillantGeneralController::class, 'destroy'])->name('deleteSG');
+Route::get('/editSurveillantGeneral/{id}',[ServeillantGeneralController::class,'edit'])->name('editSG');
+Route::put('/editSurveillantGeneral/update/{id}', [ServeillantGeneralController::class, 'update'])->name('updateSG');
+Route::get('/profileSurveillantGeneral/{id}',[ServeillantGeneralController::class,'profile'])->name('profileSG');
+//End Surveillant General controller
