@@ -1,7 +1,4 @@
 @extends('dash.blanck-page')
-@section('custom-style')
-    {{-- <link rel="stylesheet" href="{{asset('admin\vendor\sweetalert2\dist\sweetalert2.min.css')}}"> --}}
-@endsection
 @section('body-content')
     <div class="content-body">
         <!-- row -->

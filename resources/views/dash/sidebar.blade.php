@@ -27,6 +27,16 @@
                 <li><a href="about-student.html">About Students</a></li>
             </ul>
         </li>
+        <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="la la-users"></i>
+                <span class="nav-text">Surveillant General</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{route('allSG')}}">All Surveillant General</a></li>
+                <li><a href="{{route('createSG')}}">Add Surveillant General</a></li>
+            </ul>
+        </li>
             <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
                     <i class="la la-calendar"></i>
                     <span class="nav-text">Event Management</span>
