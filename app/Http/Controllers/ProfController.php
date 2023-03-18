@@ -8,17 +8,15 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Prof;
 use App\Http\Requests\ProfRequest;
-use App\Models\Departement;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class ProfController extends Controller
 {
     public function create(){
-        $departements = Departement::all();
         $to = route('storeprof');
         $title = 'Ajouter professeur';
-        return view('prof.addprof',compact('departements','to','title'));
+        return view('prof.addprof',compact('to','title'));
     }
 
     public function store(ProfRequest $request){
@@ -45,7 +43,7 @@ class ProfController extends Controller
                 $prof = new prof();
                 $prof->departement_id = $request->departement_id;
                 $user->prof()->save($prof);
-                return redirect('/allProf');
+                return redirect('')->route('allprof');
             }
         }
     }
@@ -57,16 +55,15 @@ class ProfController extends Controller
 
     public function edit($id){
         $user = User::find($id);
-        $departements = Departement::all();
         $to = route('updateprof', ['id' => $id]);
         $title = 'Modifier professeur';
-        return view('prof.addprof', compact('user','departements', 'to', 'title'));
+        return view('prof.addprof', compact('user', 'to', 'title'));
     }
 
     public function update(ProfRequest $request, $id){
         $user = User::find($id);
         $user->update($request->all());
-        return redirect()->route('editprof', $user->id);
+        return redirect()->route('allprof');
     }
 
     public function destroy($id)

@@ -32,10 +32,6 @@ class Prof extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function departement()
-    {
-        return $this->belongsTo(Departement::class);
-    }
 
     public function user(){
         return $this->belongsTo(User::class);

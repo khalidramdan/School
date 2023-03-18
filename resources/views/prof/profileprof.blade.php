@@ -130,13 +130,6 @@
                                                     <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->cin)? $user->cin : ''}}</span>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-4">
-                                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                                        <h5 class="f-w-500">Departement <span class="pull-right">:</span></h5>
-                                                    </div>
-                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->prof->departement)? $user->prof->departement->departement_nom : ''}}</span>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -41,7 +41,6 @@
                                                 <tr>
                                                     <th></th>
                                                     <th>Nom Complet</th>
-                                                    <th>Department</th>
                                                     <th>Genre</th>
                                                     <th>Tel</th>
                                                     <th>Email</th>
@@ -53,7 +52,6 @@
                                                     <tr>
                                                         <td><img class="rounded-circle" width="35" src="{{asset('storage/'.$prof->user->image)}}" alt=""></td>
                                                         <td>{{$prof->user->prenom.' '.$prof->user->nom}}</td>
-                                                        <td>{{$prof->departement->departement_nom}}</td>
                                                         <td>{{$prof->user->gender}}</td>
                                                         <td><a href="javascript:void(0);"><strong>{{$prof->user->tel}}</strong></a></td>
                                                         <td><a href="javascript:void(0);"><strong>{{$prof->user->email}}</strong></a></td>
@@ -103,12 +101,6 @@
                                                             <button class="btn btn-sm btn-danger sweet-confirm" form="delete_form{{$loop->iteration}}">
                                                                 Delete
                                                             </button>
-                                                            {{-- <a class="dropdown-item" href="{{route('editprof',['id' => $prof->user->id])}}">Edit</a>
-                                                            <form class="dropdown-item text-danger" method="POST" action="{{ route('deleteprof', ['id' => $prof->id]) }}">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <input type="submit" value="Delete">
-                                                            </form> --}}
                                                         </div>
                                                     </div>
                                                 </div>

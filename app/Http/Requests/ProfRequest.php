@@ -26,7 +26,6 @@ class ProfRequest extends FormRequest
         return [
             'nom'=>'required',
             'prenom'=>'required',
-            'departement_id'=>'required',
         ];
     }
 
@@ -35,7 +34,6 @@ class ProfRequest extends FormRequest
         return [
             'nom.required' => 'le champ nom est obligatoire',
             'prenom.required' => 'le champ prenom est obligatoire',
-            'departement_id.required' => 'le champ departement est obligatoire',
         ];
     }
 }
