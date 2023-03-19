@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ServeillantGeneralController;
+use App\Http\Controllers\AdController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,3 +50,13 @@ Route::get('/editSurveillantGeneral/{id}',[ServeillantGeneralController::class,'
 Route::put('/editSurveillantGeneral/update/{id}', [ServeillantGeneralController::class, 'update'])->name('updateSG');
 Route::get('/profileSurveillantGeneral/{id}',[ServeillantGeneralController::class,'profile'])->name('profileSG');
 //End Surveillant General controller
+
+//start CRUD admin
+Route::get('/add_admin',[AdController::class,'index'])->name('createadmin');
+Route::put('/editadmin/update/{id}', [AdController::class, 'update'])->name('updateadmin');
+Route::get('/allAdmin',[AdController::class,'show'])->name('alladmin');
+Route::post('/storeAdmin',[AdController::class,'store'])->name('storeadmin');
+Route::get('/editadmin/{id}',[AdController::class,'edit'])->name('editadmin');
+Route::delete('/deleteadmin/{id}', [AdController::class, 'destroy'])->name('deleteadmin');
+Route::get('/profileadmin/{id}',[AdController::class,'profile'])->name('profileadmin');
+//end CRUD admin
