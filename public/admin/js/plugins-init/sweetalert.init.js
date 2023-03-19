@@ -1,3 +1,6 @@
+$(".sweet-confirm i").click(function (e) { 
+    e.preventDefault();
+});
 $(".sweet-confirm").click(function (e) {
     e.preventDefault();
     const swalWithBootstrapButtons = Swal.mixin({
@@ -19,7 +22,7 @@ $(".sweet-confirm").click(function (e) {
     }).then((result) => {
         if (result.isConfirmed) {
             debugger
-            $(e.target.form).submit();
+            $(e.target).parents("td").find('form').submit();
             swalWithBootstrapButtons.fire(
                 'Supprimé!',
                 'Ce professeur a été supprimé.',

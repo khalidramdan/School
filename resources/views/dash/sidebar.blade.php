@@ -9,6 +9,14 @@
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                 <i class="la la-user"></i>
+                <span class="nav-text">Admins</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('alladmin') }}">All Admins</a></li>
+                <li><a href="{{ route('createadmin') }}">Add admins</a></li>
+            </ul>
+            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="la la-user"></i>
                 <span class="nav-text">Professors</span>
             </a>
             <ul aria-expanded="false">
