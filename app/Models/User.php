@@ -35,14 +35,12 @@ class User extends Model implements Authenticatable
     {
         return $this->hasOne(prof::class);
     }
-<<<<<<< HEAD
 
     public function SG()
     {
         return $this->hasOne(Surveillant_Generale::class);
-=======
+    }
     public function admin(){
         return $this->hasOne(Admin::class);
->>>>>>> fb3df31 (CRUD admin)
     }
 }
