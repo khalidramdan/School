@@ -43,7 +43,7 @@ class ProfController extends Controller
                 $prof = new prof();
                 $prof->departement_id = $request->departement_id;
                 $user->prof()->save($prof);
-                return redirect('')->route('allprof');
+                return redirect()->route('allprof');
             }
         }
     }
