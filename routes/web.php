@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ServeillantGeneralController;
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\FiliereController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +61,10 @@ Route::get('/editadmin/{id}',[AdController::class,'edit'])->name('editadmin');
 Route::delete('/deleteadmin/{id}', [AdController::class, 'destroy'])->name('deleteadmin');
 Route::get('/profileadmin/{id}',[AdController::class,'profile'])->name('profileadmin');
 //end CRUD admin
+//Start Filiere controller
+Route::get('/allFiliere',[FiliereController::class,'showall'])->name('allfiliere');
+Route::post('/storeFiliere',[FiliereController::class,'store'])->name('storefiliere');
+Route::delete('/deleteFiliere/{id}', [FiliereController::class, 'destroy'])->name('deletefiliere');
+Route::put('/editFiliere/update/{id}', [FiliereController::class, 'update'])->name('updatefiliere');
+Route::get('/edit_filiere/{id}',[FiliereController::class,'edit']);
+//End Filiere controller

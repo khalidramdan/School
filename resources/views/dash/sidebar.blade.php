@@ -2,9 +2,9 @@
     <div class="dlabnav-scroll">
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
-            <li><a class="has-arrow" href="{{route('home')}}" aria-expanded="false">
+            <li><a class="has-arrow" href="{{ route('home') }}" aria-expanded="false">
                     <i class="la la-home"></i>
-                    <span class="nav-text"><a href="{{route('home')}}">Dashboard</a></span>
+                    <span class="nav-text"><a href="{{ route('home') }}">Dashboard</a></span>
                 </a>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -110,7 +110,7 @@
                     <li><a href="add-fees.html">Add Fees</a></li>
                     <li><a href="fees-receipt.html">Fees Receipt</a></li>
                 </ul>
-            </li>					
+            </li>
             <li class="nav-label">Apps</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="la la-users"></i>
@@ -153,7 +153,8 @@
                 </ul>
             </li>
             <li class="nav-label">Components</li>
-            <li class="mega-menu mega-menu-xl"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li class="mega-menu mega-menu-xl"><a class="has-arrow ai-icon" href="javascript:void()"
+                    aria-expanded="false">
                     <i class="la la-globe"></i>
                     <span class="nav-text">Bootstrap</span>
                 </a>

@@ -21,13 +21,7 @@ $(".sweet-confirm").click(function (e) {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            debugger
-            $(e.target).parents("td").find('form').submit();
-            swalWithBootstrapButtons.fire(
-                'Supprimé!',
-                'Ce professeur a été supprimé.',
-                'success'
-            )
+            $(e.target).parents("td").find(`form#${$(e.target).data("form-id")}`).submit();
         } else if (
             /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
