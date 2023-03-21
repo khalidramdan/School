@@ -60,12 +60,12 @@
                                                         <td>{{$admin->user->gender}}</td>
                                                         <td>{{$admin->user->tel}}</td>
                                                         <td>{{$admin->user->email}}</td>
-                                                        <td>
-                                                            <a href="{{route('profileadmin',['id' => $admin->user->id])}}" class="btn btn-sm btn-success">
+                                                        <td class="td_actions">
+                                                            <a href="{{route('profileadmin',['id' => $admin->user->id])}}" class="btn btn-sm btn-info">
                                                                 <i class="la la-eye">
                                                                 </i>
                                                             </a>
-                                                            <a href="{{route('editadmin',['id' => $admin->user->id])}}" class="btn btn-sm btn-primary">
+                                                            <a href="{{route('editadmin',['id' => $admin->user->id])}}" class="btn btn-sm btn-success">
                                                                 <i class="la la-pencil">
                                                                 </i>
                                                             </a>
@@ -97,13 +97,13 @@
                                                         <span class="dropdown-dots fs--1"></span>
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right border py-0">
-                                                        <div class="py-2">
-                                                            <a href="{{route('createadmin')}}" class="btn btn-sm btn-primary">+</a>
+                                                        <div class="py-2 btn_crud_admin_grid_view">
+                                                            <a href="{{route('createadmin')}}" class="btn btn-sm btn-primary"><i class="la la-plus"></i></a>
                                                             <a href="{{route('editadmin',['id' => $admin->user->id])}}" class="btn btn-sm btn-success">
                                                                 <i class="la la-pencil">
                                                                 </i>
                                                             </a>
-                                                            <form class="dropdown-item text-danger" method="POST" action="{{ route('deleteadmin', ['id' => $admin->user->id]) }}" id="delete_form{{$loop->iteration}}">
+                                                            <form class="" method="POST" action="{{ route('deleteadmin', ['id' => $admin->user->id]) }}" id="delete_form{{$loop->iteration}}">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-sm btn-danger sweet-confirm"  form="delete_form{{$loop->iteration}}">
@@ -131,7 +131,7 @@
                                                             <li class="list-group-item px-0 d-flex justify-content-between">
                                                                 <span class="mb-0">Address:</span><strong>{{$admin->user->adresse}}</strong></li>
                                                         </ul>
-                                                        <a class="btn btn-outline-primary btn-rounded mt-3 px-4" href="{{route('profileadmin', ['id' => $admin->user->id])}}">Read More</a>
+                                                        <a class="btn btn-info btn-rounded mt-3 px-4" href="{{route('profileadmin', ['id' => $admin->user->id])}}">Read More</a>
                                                     </div>
                                                 </div>
                                         </div>
