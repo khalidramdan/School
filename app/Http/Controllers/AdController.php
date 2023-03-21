@@ -7,6 +7,7 @@ use App\Models\Role;
 use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 class AdController extends Controller
 {
     /**
