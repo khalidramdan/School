@@ -69,14 +69,14 @@
                                                                 <i class="la la-pencil">
                                                                 </i>
                                                             </a>
-                                                            <form method="POST" action="{{ route('deleteadmin', ['id' => $admin->user->id]) }}" id="delete_form{{$loop->iteration}}" class="d-none">
+                                                            <form method="POST" action="{{ route('deleteadmin', ['id' => $admin->user->id]) }}" id="delete_form{{$loop->iteration}}">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                            </form>
-                                                            <button type="submit" class="btn btn-sm btn-danger sweet-confirm" form="delete_form{{$loop->iteration}}">
-                                                                <i class="la la-trash-o">
-                                                                </i>
-                                                            </button>
+                                                                <button class="btn btn-sm btn-danger sweet-confirm" form="delete_form{{$loop->iteration}}">
+                                                                    <i class="la la-trash-o">
+                                                                    </i>
+                                                                </button>
+                                                            </form> 
                                                         </td>												
                                                     </tr>
                                                 @endforeach
@@ -98,19 +98,18 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right border py-0">
                                                         <div class="py-2">
-                                                            <a class="dropdown-item" href="{{route('editadmin',['id' => $admin->user->id])}}">Edit</a>
-                                                            <form method="POST" action="{{ route('deleteadmin', ['id' => $admin->user->id]) }}" id="delete_form{{$loop->iteration}}" class="d-none">
+                                                            <a href="{{route('createadmin')}}" class="btn btn-sm btn-primary">+</a>
+                                                            <a href="{{route('editadmin',['id' => $admin->user->id])}}" class="btn btn-sm btn-success">
+                                                                <i class="la la-pencil">
+                                                                </i>
+                                                            </a>
+                                                            <form class="dropdown-item text-danger" method="POST" action="{{ route('deleteadmin', ['id' => $admin->user->id]) }}" id="delete_form{{$loop->iteration}}">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                            </form>
-                                                            <button class="btn btn-sm btn-danger sweet-confirm" form="delete_form{{$loop->iteration}}">
-                                                                Delete
-                                                            </button>
-                                                            <a class="dropdown-item" href="{{route('editprof',['id' => $admin->user->id])}}">Edit</a>
-                                                            <form class="dropdown-item text-danger" method="POST" action="{{ route('deleteprof', ['id' => $admin->id]) }}">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <input type="submit" value="Delete">
+                                                                <button type="submit" class="btn btn-sm btn-danger sweet-confirm"  form="delete_form{{$loop->iteration}}">
+                                                                    <i class="la la-trash-o">
+                                                                    </i>
+                                                                </button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -132,7 +131,7 @@
                                                             <li class="list-group-item px-0 d-flex justify-content-between">
                                                                 <span class="mb-0">Address:</span><strong>{{$admin->user->adresse}}</strong></li>
                                                         </ul>
-                                                        <a class="btn btn-outline-primary btn-rounded mt-3 px-4" href="{{route('profileprof', ['id' => $admin->user->id])}}">Read More</a>
+                                                        <a class="btn btn-outline-primary btn-rounded mt-3 px-4" href="{{route('profileadmin', ['id' => $admin->user->id])}}">Read More</a>
                                                     </div>
                                                 </div>
                                         </div>
@@ -148,6 +147,28 @@
     </div>
 @endsection
 @section('custom-scripts')
-    {{-- <script src="{{asset('admin\vendor\sweetalert2\dist\sweetalert2.min.js')}}" ></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        $('.sweet-confirm').click(function(event){
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: "Are you sure you want to delete this record?",
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                type: "warning",
+                buttons: ["Cancel","Yes!"],
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result) {
+                    form.submit();
+                }
+            });
+        });
+    </script>
 @endsection
