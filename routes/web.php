@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ServeillantGeneralController;
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FamilyController;
@@ -88,4 +89,6 @@ Route::get('/allFamily',[FamilyController::class,'showall'])->name('allfamily');
 Route::delete('/deletefamily/{id}', [FamilyController::class, 'destroy'])->name('deletefamily');
 Route::get('/profilefamily/{id}',[FamilyController::class,'profile'])->name('profilefamily');
 //End family controller
-
+//Start document controller
+Route::get('/addDocument',[DocumentController::class,'create'])->name('createdocument');
+//End domcument controller
