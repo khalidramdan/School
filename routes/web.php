@@ -7,12 +7,9 @@ use App\Http\Controllers\ServeillantGeneralController;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FiliereController;
-<<<<<<< HEAD
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FamilyController;
-=======
 use App\Http\Controllers\ClassController;
->>>>>>> 23e2d45 (dev crud class)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
