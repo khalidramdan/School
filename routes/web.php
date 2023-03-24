@@ -7,8 +7,12 @@ use App\Http\Controllers\ServeillantGeneralController;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FiliereController;
+<<<<<<< HEAD
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FamilyController;
+=======
+use App\Http\Controllers\ClassController;
+>>>>>>> 23e2d45 (dev crud class)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,3 +96,10 @@ Route::get('/profilefamily/{id}',[FamilyController::class,'profile'])->name('pro
 //Start document controller
 Route::get('/addDocument',[DocumentController::class,'create'])->name('createdocument');
 //End domcument controller
+//Start Class controller
+Route::get('/allClass',[ClassController::class,'showall'])->name('allclass');
+Route::post('/storeClass',[ClassController::class,'store'])->name('storeclass');
+Route::delete('/deleteClass/{id}', [ClassController::class, 'destroy'])->name('deleteclass');
+Route::put('/editClass/update/{id}', [ClassController::class, 'update'])->name('updateclass');
+Route::get('/edit_class/{id}',[ClassController::class,'edit']);
+//End Class controller
