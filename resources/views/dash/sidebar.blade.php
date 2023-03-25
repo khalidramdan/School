@@ -72,7 +72,7 @@
                     <span class="nav-text">Courses</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="all-courses.html">All Courses</a></li>
+                    <li><a href="{{route('alldocument')}}">All Courses</a></li>
                     <li><a href="{{route('createdocument')}}">Add Courses</a></li>
                 </ul>
             </li>

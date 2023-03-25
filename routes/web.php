@@ -92,6 +92,12 @@ Route::get('/profilefamily/{id}',[FamilyController::class,'profile'])->name('pro
 //End family controller
 //Start document controller
 Route::get('/addDocument',[DocumentController::class,'create'])->name('createdocument');
+Route::post('/storeDocument',[DocumentController::class,'store'])->name('storedocument');
+Route::put('/editdocument/update/{id}', [DocumentController::class, 'update'])->name('updatedocument');
+Route::get('/editdocument/{id}',[DocumentController::class,'edit'])->name('editdocument');
+Route::get('/allDocument',[DocumentController::class,'showall'])->name('alldocument');
+Route::delete('/deletedocument/{id}', [DocumentController::class, 'destroy'])->name('deletedocument');
+Route::get('/profiledocument/{id}',[DocumentController::class,'profile'])->name('profiledocument');
 //End domcument controller
 //Start Class controller
 Route::get('/allClass',[ClassController::class,'showall'])->name('allclass');
