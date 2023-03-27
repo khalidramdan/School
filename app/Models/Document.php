@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Document extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        //
+    ];
+    public $timestamps = false;
+
+    protected $guarded = [
+        'id'
+    ];
 }

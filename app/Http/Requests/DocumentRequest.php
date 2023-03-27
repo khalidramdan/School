@@ -13,7 +13,7 @@ class DocumentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class DocumentRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nom'=>'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nom.required' => 'le champ nom est obligatoire',
         ];
     }
 }
