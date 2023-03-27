@@ -47,10 +47,10 @@
                 <i class="la la-users"></i>
                 <span class="nav-text">Surveillant General</span>
             </a>
-            {{-- <ul aria-expanded="false">
+            <ul aria-expanded="false">
                 <li><a href="{{route('allSG')}}">All Surveillant General</a></li>
                 <li><a href="{{route('createSG')}}">Add Surveillant General</a></li>
-            </ul> --}}
+            </ul>
         </li>
         <li>
             <a class="has-arrow" href="javascript:void()" aria-expanded="false">
