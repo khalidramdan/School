@@ -68,7 +68,6 @@
                                 <div class="custom-tab-1">
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item"><a href="#about-me" data-toggle="tab" class="nav-link active show">About Me</a></li>
-                                        <li class="nav-item"><a href="#about-me" data-toggle="tab" class="nav-link active show">telecharger PDF</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div id="about-me" class="tab-pane fade active show">

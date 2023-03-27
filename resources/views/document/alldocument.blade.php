@@ -45,17 +45,28 @@
                                                     <th>image</th>
                                                     <th>Nom</th>
                                                     <th>Tel</th>
-                                                    <th>Max éleve </th>
+                                                    <th>Max éleve</th>
+                                                    <th>Download</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($documents as $document)
                                                     <tr>
-                                                        <td><img class="rounded-circle" width="35" src="{{asset('storage/'.$document->image)}}" alt=""></td>
+                                                        @php
+                                                            $file_parts = explode('.', $document->image);
+                                                            $extension = end($file_parts);
+                                                            if ($extension == 'pdf') {
+                                                                $path = 'images/pdf.png';
+                                                            }else {
+                                                                $path = 'storage/' . $document->image;
+                                                            }
+                                                            echo'<td><img class="rounded-circle" width="35" src="' . asset($path) . '" alt=""></td>';
+                                                        @endphp
                                                         <td>{{$document->nom}}</td>
                                                         <td>{{$document->tel}}</td>
                                                         <td>{{$document->student_number}}</td>
+                                                        <td><a href="{{ route('download', ['id' => $document->id]) }}">Download</a></td>
                                                         <td class="td_actions">
                                                             <a href="{{route('profiledocument',['id' => $document->id])}}" class="btn btn-sm btn-info">
                                                                 <i class="la la-eye">

@@ -29,8 +29,6 @@ class DocumentController extends Controller
         $document->description = $request->description;
         $document->save();
         return redirect()->route("alldocument");
-
-
     }
 
     public function edit($id){
