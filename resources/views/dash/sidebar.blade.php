@@ -87,14 +87,6 @@
                 </ul>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-building"></i>
-                    <span class="nav-text">Departments</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="{{ route('alldepartement') }}">All Departments</a></li>
-                </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="la la-users"></i>
                     <span class="nav-text">Staff</span>
                 </a>
