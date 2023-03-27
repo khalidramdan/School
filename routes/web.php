@@ -98,6 +98,7 @@ Route::get('/editdocument/{id}',[DocumentController::class,'edit'])->name('editd
 Route::get('/allDocument',[DocumentController::class,'showall'])->name('alldocument');
 Route::delete('/deletedocument/{id}', [DocumentController::class, 'destroy'])->name('deletedocument');
 Route::get('/profiledocument/{id}',[DocumentController::class,'profile'])->name('profiledocument');
+Route::get('/download/{id}',[DocumentController::class,'download'])->name('download');
 //End domcument controller
 //Start Class controller
 Route::get('/allClass',[ClassController::class,'showall'])->name('allclass');
