@@ -17,10 +17,6 @@ class Student extends Model
         'id'
     ];
 
-    public function departement()
-    {
-        return $this->belongsTo(departement::class);
-    }
 
     public function user(){
         return $this->belongsTo(user::class);

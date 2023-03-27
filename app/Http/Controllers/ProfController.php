@@ -41,7 +41,6 @@ class ProfController extends Controller
             if($role->users()->save($user)){
                 // store prof
                 $prof = new prof();
-                $prof->departement_id = $request->departement_id;
                 $user->prof()->save($prof);
                 return redirect()->route('allprof');
             }

@@ -69,7 +69,7 @@
 
         </div>
     </div>
-    {{-- start modal add departement --}}
+    {{-- start modal add filiere --}}
     <div class="modal fade" id="addnew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -94,7 +94,7 @@
         </div>
     </div>
     {{-- end modal add --}}
-    {{-- start modal update departement --}}
+    {{-- start modal update filiere --}}
     <div class="modal fade" id="update-filiere" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -119,32 +119,7 @@
         </div>
     </div>
     {{-- end modal update --}}
-    {{-- start modal update departement --}}
-    {{-- <div class="modal fade" id="delete-department" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Delete Department</h5>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" action="{{ url('delete_departement') }}">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id" id="delete_id_department"/>
-                            <div class="mb-3">
-                                <h3 class="confirmation">Are you sure you want to delete this departement...?</h3>
-                            </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="submit" class="btn btn-danger">Yes Delete</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div> --}}
-    {{-- end modal update --}}
+    {{-- start modal update filiere --}}
 @endsection
 @section('scripts')
     <script>
