@@ -62,6 +62,16 @@
                 <li><a href="{{route('storeclass')}}">Add Class</a></li>
             </ul>
         </li>
+        <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                <i class="la la-pencil"></i>
+                <span class="nav-text">Salles</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{route('allsalles')}}">All Salles</a></li>
+                <li><a href="#">Add Salle</a></li>
+            </ul>
+        </li>
             <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
                     <i class="la la-calendar"></i>
                     <span class="nav-text">Event Management</span>

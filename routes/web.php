@@ -10,6 +10,7 @@ use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\SalleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -98,4 +99,7 @@ Route::post('/storeClass',[ClassController::class,'store'])->name('storeclass');
 Route::delete('/deleteClass/{id}', [ClassController::class, 'destroy'])->name('deleteclass');
 Route::put('/editClass/update/{id}', [ClassController::class, 'update'])->name('updateclass');
 Route::get('/edit_class/{id}',[ClassController::class,'edit']);
+//End Class controller
+//Start Salle controller
+Route::get('/allSalles',[SalleController::class,'showall'])->name('allsalles');
 //End Class controller
