@@ -125,6 +125,13 @@
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                                                        <h5 class="f-w-500">Registration-date <span class="pull-right">:</span></h5>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->created_at)? $user->created_at->format('Y-m-d') : ''}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                                                         <h5 class="f-w-500">Cin <span class="pull-right">:</span></h5>
                                                     </div>
                                                     <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->cin)? $user->cin : ''}}</span>

@@ -28,7 +28,7 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{$to}}" method="post">
+                        <form action="{{$to}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @if ($title == 'Modifier éleve')
                                 @method('PUT')
@@ -62,12 +62,6 @@
                                     <div class="form-group">
                                         <label class="form-label">Email</label>
                                         <input type="text" class="form-control" value="{{(isset($user))? $user->email : ''}}" name="email">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Registration Date</label>
-                                        <input name="datepicker" class="datepicker-default form-control" id="datepicker">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -122,12 +116,7 @@
                                         <input type="date" class="datepicker-default form-control" value="{{(isset($user))? $user->dateNaissance : ''}}" id="datepicker1" name="dateNaissance">
                                     </div>
                                 </div>
-                                {{-- <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Blood Group</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div> --}}
+
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Address</label>
@@ -136,7 +125,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group fallback w-100">
-                                        <input type="file" class="dropify" data-default-file="">
+                                        <input type="file" class="dropify" data-default-file="" name="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">

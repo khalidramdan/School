@@ -44,7 +44,6 @@ class StudentController extends Controller
                 // store student
                 $student = new student();
                 $user->student()->save($student);
-                // return "diuvdivd";
                 return redirect('/allStudent');
 
             }
