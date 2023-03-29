@@ -7,6 +7,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
@@ -43,6 +44,18 @@ class DocumentController extends Controller
         $document->update($request->all());
         return redirect()->route('editdocument', $document->id);
     }
+
+    public function download($id){
+        $documents = Document::find($id);
+        $file_parts = explode('.', $documents->image);
+        $extension = end($file_parts);
+        if ($extension == 'pdf') {
+            return Storage::download($documents->image, $documents->nom.'.pdf');
+        } else {
+            return Storage::download($documents->image, $documents->nom.'.jpg');
+        }
+    }
+
 
     public function showall(){
         $documents = Document::all();

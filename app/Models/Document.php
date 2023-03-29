@@ -10,7 +10,7 @@ class Document extends Model
     protected $fillable = [
         //
     ];
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $guarded = [
         'id'
