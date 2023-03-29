@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Niveau extends Model
 {
     use HasFactory;
-    protected $table = 'niveaux';
+    protected $table = 'niveau';
+    protected $fallable = ['nom','niveau_id','filiere_id'];
     public $timestamps = false;
-    protected $fillable = ['nom','niveau_id','filiere_id'];
 
-    public function classes(){
-        return $this->hasMany(Classe::class);
+    public function filiere(){
+
+        return $this->belongsTo(Filiere::class);
     }
 }

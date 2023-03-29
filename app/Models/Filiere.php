@@ -9,4 +9,9 @@ class Filiere extends Model
 {
     protected $fillable = ['nom'];
     public $timestamps = false;
+
+
+    public function niveaux(){
+        return $this->hasMany(Niveau::class);
+    }
 }
