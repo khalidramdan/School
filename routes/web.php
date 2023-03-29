@@ -102,4 +102,5 @@ Route::get('/edit_class/{id}',[ClassController::class,'edit']);
 //End Class controller
 //Start Salle controller
 Route::get('/allSalles',[SalleController::class,'showall'])->name('allsalles');
+Route::post('/storeSalle',[SalleController::class,'store'])->name('storesalle');
 //End Class controller
