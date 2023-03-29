@@ -106,12 +106,6 @@
                                                             <button class="btn btn-sm btn-danger sweet-confirm" form="delete_form{{$loop->iteration}}">
                                                                 Delete
                                                             </button>
-                                                            {{-- <a class="dropdown-item" href="{{route('editstudent',['id' => $student->user->id])}}">Edit</a>
-                                                            <form class="dropdown-item text-danger" method="POST" action="{{ route('deletestudent', ['id' => $student->id]) }}">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <input type="submit" value="Delete">
-                                                            </form> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -148,6 +142,28 @@
     </div>
 @endsection
 @section('custom-scripts')
-    {{-- <script src="{{asset('admin\vendor\sweetalert2\dist\sweetalert2.min.js')}}" ></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        $('.sweet-confirm').click(function(event){
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: "Are you sure you want to delete this record?",
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                type: "warning",
+                buttons: ["Cancel","Yes!"],
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result) {
+                    form.submit();
+                }
+            });
+        });
+    </script>
 @endsection
