@@ -82,6 +82,27 @@ Route::get('/allFamily',[FamilyController::class,'showall'])->name('allfamily');
 Route::delete('/deletefamily/{id}', [FamilyController::class, 'destroy'])->name('deletefamily');
 Route::get('/profilefamily/{id}',[FamilyController::class,'profile'])->name('profilefamily');
 //End family controller
+//Start document controller
+Route::get('/addDocument',[DocumentController::class,'create'])->name('createdocument');
+Route::post('/storeDocument',[DocumentController::class,'store'])->name('storedocument');
+Route::put('/editdocument/update/{id}', [DocumentController::class, 'update'])->name('updatedocument');
+Route::get('/editdocument/{id}',[DocumentController::class,'edit'])->name('editdocument');
+Route::get('/allDocument',[DocumentController::class,'showall'])->name('alldocument');
+Route::delete('/deletedocument/{id}', [DocumentController::class, 'destroy'])->name('deletedocument');
+Route::get('/profiledocument/{id}',[DocumentController::class,'profile'])->name('profiledocument');
+Route::get('/download/{id}',[DocumentController::class,'download'])->name('download');
+//End domcument controller
+//Start Class controller
+Route::get('/allClass',[ClassController::class,'showall'])->name('allclass');
+Route::post('/storeClass',[ClassController::class,'store'])->name('storeclass');
+Route::delete('/deleteClass/{id}', [ClassController::class, 'destroy'])->name('deleteclass');
+Route::put('/editClass/update/{id}', [ClassController::class, 'update'])->name('updateclass');
+Route::get('/edit_class/{id}',[ClassController::class,'edit']);
+//End Class controller
+//Start Salle controller
+Route::get('/allSalles',[SalleController::class,'showall'])->name('allsalles');
+Route::post('/storeSalle',[SalleController::class,'store'])->name('storesalle');
+//End Class controller
 //start routes Niveau
 Route::get('/Niveau',[NiveauController::class,'index']);
 Route::get('/all_Niveau',[NiveauController::class , 'create'])->name('all_Niveau');
