@@ -7,7 +7,7 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <h4>All Classes</h4>
+                        <h4>All Salles</h4>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -30,6 +30,11 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
+                                        @if (session()->has('message'))
+                                            <div class="alert alert-danger">
+                                                {{ session()->get('message') }}
+                                            </div>
+                                        @endif
                                         <table id="example3" class="display" style="min-width: 845px">
                                             <thead>
                                                 <tr>
@@ -82,19 +87,19 @@
                     <h5 class="modal-title" id="exampleModalLabel">New Salle</h5>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="#">
+                    <form method="POST" action="{{ route('storesalle') }}">
                         @csrf
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Numero de Salle : </label>
-                            <input type="text" class="form-control" id="recipient-name" name="nom">
+                            <input type="number" class="form-control" id="recipient-name" name="salle_number"
+                                min="1">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add</button>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add</button>
-                </div>
-                </form>
             </div>
         </div>
     </div>
