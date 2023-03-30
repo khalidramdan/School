@@ -8,70 +8,58 @@
                 </a>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                <i class="la la-user"></i>
-                <span class="nav-text">Admins</span>
-            </a>
-            <ul aria-expanded="false">
-                <li><a href="{{ route('alladmin') }}">All Admins</a></li>
-                <li><a href="{{ route('createadmin') }}">Add admins</a></li>
-            </ul>
+                    <i class="la la-user"></i>
+                    <span class="nav-text">Admins</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('alladmin') }}">All Admins</a></li>
+                    <li><a href="{{ route('createadmin') }}">Add admins</a></li>
+                </ul>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                <i class="la la-user"></i>
-                <span class="nav-text">Professors</span>
-            </a>
-            <ul aria-expanded="false">
-                <li><a href="{{route('allprof')}}">All Professor</a></li>
-                <li><a href="{{route('createprof')}}">Add Professor</a></li>
-            </ul>
-        </li>
-        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                <i class="la la-users"></i>
-                <span class="nav-text">Students</span>
-            </a>
-            <ul aria-expanded="false">
-                <li><a href="{{route('allstudent')}}">All Students</a></li>
-                <li><a href="{{route('createstudent')}}">Add Students</a></li>
-            </ul>
-        </li>
-        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-            <i class="la la-user"></i>
-            <span class="nav-text">Parents</span>
-        </a>
-            <ul aria-expanded="false">
-                <li><a href="{{route('allfamily')}}">All Parent</a></li>
-                <li><a href="{{route('createfamily')}}">Add Parent</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                <i class="la la-users"></i>
-                <span class="nav-text">Surveillant General</span>
-            </a>
-            <ul aria-expanded="false">
-                <li><a href="{{route('allSG')}}">All Surveillant General</a></li>
-                <li><a href="{{route('createSG')}}">Add Surveillant General</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                <i class="la la-pencil"></i>
-                <span class="nav-text">Classes</span>
-            </a>
-            <ul aria-expanded="false">
-                <li><a href="{{route('allclass')}}">All Classes</a></li>
-                <li><a href="{{route('storeclass')}}">Add Class</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                <i class="la la-pencil"></i>
-                <span class="nav-text">Salles</span>
-            </a>
-            <ul aria-expanded="false">
-                <li><a href="{{route('allsalles')}}">All Salles</a></li>
-                <li><a href="#">Add Salle</a></li>
-            </ul>
-        </li>
+                    <i class="la la-user"></i>
+                    <span class="nav-text">Professors</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('allprof') }}">All Professor</a></li>
+                    <li><a href="{{ route('createprof') }}">Add Professor</a></li>
+                </ul>
+            </li>
+            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="la la-users"></i>
+                    <span class="nav-text">Students</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('allstudent') }}">All Students</a></li>
+                    <li><a href="{{ route('createstudent') }}">Add Students</a></li>
+                </ul>
+            </li>
+            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="la la-user"></i>
+                    <span class="nav-text">Parents</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('allfamily') }}">All Parent</a></li>
+                    <li><a href="{{ route('createfamily') }}">Add Parent</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="la la-users"></i>
+                    <span class="nav-text">Surveillant General</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('allSG') }}">All Surveillant General</a></li>
+                    <li><a href="{{ route('createSG') }}">Add Surveillant General</a></li>
+                </ul>
+            </li>
+            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="la la-building"></i>
+                    <span class="nav-text">Niveaux</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('all_Niveau') }}">ALL Niveau</a></li>
+                </ul>
+            </li>
             <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
                     <i class="la la-calendar"></i>
                     <span class="nav-text">Event Management</span>
