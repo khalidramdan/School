@@ -102,7 +102,9 @@ Route::get('/edit_class/{id}',[ClassController::class,'edit']);
 //Start Salle controller
 Route::get('/allSalles',[SalleController::class,'showall'])->name('allsalles');
 Route::post('/storeSalle',[SalleController::class,'store'])->name('storesalle');
-//End Class controller
+Route::put('/editSalle/update/{id}', [SalleController::class, 'update'])->name('updatesalle');
+Route::get('/edit_salle/{id}',[SalleController::class,'edit']);
+//End Salle controller
 //start routes Niveau
 Route::get('/Niveau',[NiveauController::class,'index']);
 Route::get('/all_Niveau',[NiveauController::class , 'create'])->name('all_Niveau');
