@@ -47,8 +47,7 @@
                                                     <tr>
                                                         <td>{{ $salle->salle_number }}</td>
                                                         <td>
-                                                            <button type="button" value="{{ $salle->id }}"
-                                                                class="btn btn-sm btnedit btn-success">
+                                                            <button type="button" value="{{ $salle->id }}" class="btn btn-sm btnedit btn-success">
                                                                 <i class="la la-pencil">
                                                                 </i>
                                                             </button>
@@ -112,19 +111,19 @@
                     <h5 class="modal-title" id="exampleModalLabel">Update Classe</h5>
                 </div>
                 <div class="modal-body">
-                    <form id="form_update" method="POST" action="">
+                    <form id="form_update" method="POST" action="#">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Nom : </label>
-                            <input type="text" class="form-control" id="nom" name="nom">
+                            <label for="recipient-name" class="col-form-label">Number : </label>
+                            <input type="number" min="1" class="form-control" id="nom" name="salle_number">
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Update</button>
-                </div>
-                </form>
             </div>
         </div>
     </div>
@@ -136,14 +135,14 @@
         $(document).ready(function() {
             $(document).on('click', '.btnedit', function() {
                 var id = $(this).val();
-                var to = "/editFiliere/update/";
+                var to = "/editSalle/update/";
                 $('#update').modal('show');
                 $('#form_update').prop("action", to + id);
                 $.ajax({
                     type: "GET",
-                    url: "/edit_filiere/" + id,
-                    success: function(filiere) {
-                        $('#nom').val(filiere.nom);
+                    url: "/edit_salle/" + id,
+                    success: function(salle) {
+                        $('#nom').val(salle.salle_number);
                     }
                 })
             });
