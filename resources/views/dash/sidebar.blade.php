@@ -60,9 +60,9 @@
                     <li><a href="{{ route('all_Niveau') }}">ALL Niveau</a></li>
                 </ul>
             </li>
-            <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
+            <li><a class="ai-icon" href="{{ route('emploi') }}" aria-expanded="false">
                     <i class="la la-calendar"></i>
-                    <span class="nav-text">Event Management</span>
+                    emploi
                 </a>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">

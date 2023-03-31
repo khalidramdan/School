@@ -11,3 +11,9 @@
     justify-content: center;
     align-items: center;
 }
+.head_emploi{
+    text-align: center;
+}
+#emploi{
+    min-width: 1245px
+}

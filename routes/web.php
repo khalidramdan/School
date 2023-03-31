@@ -118,3 +118,9 @@ Route::delete('/delete/{id}',[NiveauController::class,'delete_sous_niveau']);
 Route::delete('/delete-niveau/{id}',[NiveauController::class,'destroy']);
 //end routes Niveau
 
+//start routes Emploi
+Route::get('/emploi',function(){
+    return view('Emploi_du_temps.emploi');
+})->name('emploi');
+//end routes Emploi
+
