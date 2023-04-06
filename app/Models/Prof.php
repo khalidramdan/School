@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\matiere;
 
 /**
  * @property integer $id
@@ -28,5 +29,8 @@ class Prof extends Model
 
     public function classes(){
         return $this->hasMany(Classe::class);
+    }
+    public function matiere(){
+        return $this->belongsTo(matiere::class);
     }
 }

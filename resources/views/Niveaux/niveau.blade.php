@@ -393,8 +393,6 @@
                     type: "GET",
                     url: "/edit_niveau/" + id,
                     success: function(response) {
-                        // console.log(response);
-                        debugger;
                         $("#Niveau-nom").val(response.niveau.nom);
                         $("#filiere_id").empty();
                         $("#filiere_id").append(
