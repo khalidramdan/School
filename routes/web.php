@@ -1,15 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\ServeillantGeneralController;
 use App\Http\Controllers\AdController;
-use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\FiliereController;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ProfController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\NiveauController;
+use App\Http\Controllers\FiliereController;
+use App\Http\Controllers\MatiereController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\ServeillantGeneralController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -117,7 +118,13 @@ Route::put('/update_Niveau',[NiveauController::class,'update']);
 Route::delete('/delete/{id}',[NiveauController::class,'delete_sous_niveau']);
 Route::delete('/delete-niveau/{id}',[NiveauController::class,'destroy']);
 //end routes Niveau
-
+//start routes matiere
+Route::get('/matiere',[MatiereController::class,'index'])->name('matiere');
+Route::post('/add_matiere',[MatiereController::class,'store'])->name('add_matiere');
+Route::get('/edit/{id}',[MatiereController::class,'edit']);
+Route::put('/update_matiere',[MatiereController::class,'update']);
+Route::delete('/delete-matiere/{id}',[MatiereController::class,'destroy']);
+//end routes matiere
 //start routes Emploi
 Route::get('/emploi',function(){
     return view('Emploi_du_temps.emploi');
