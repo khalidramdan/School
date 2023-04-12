@@ -3,22 +3,22 @@
     <div class="content-body">
         <!-- row -->
         <div class="container-fluid">
-        
+
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <h4>Amin Profile</h4>
+                        <h4>Administrateurs Profile</h4>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="{{route('alladmin')}}">Admins</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0);">Admin Profile</a></li>
+                        <li class="breadcrumb-item active"><a href="{{route('alladmin')}}">Administrateurs</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0);">Administrateur Profile</a></li>
                     </ol>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-xl-3 col-xxl-4 col-lg-4">
                     <div class="row">
@@ -41,20 +41,20 @@
                             <div class="profile-tab">
                                 <div class="custom-tab-1">
                                     <ul class="nav nav-tabs">
-                                        <li class="nav-item"><a href="#about-me" data-toggle="tab" class="nav-link active show">About Me</a></li>
+                                        <li class="nav-item"><a href="#about-me" data-toggle="tab" class="nav-link active show">à propos de nous</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div id="about-me" class="tab-pane fade active show">
                                             <div class="profile-about-me">
                                                 <div class="pt-4 border-bottom-1 pb-4">
-                                                    <p>{{$user->description}}</p>
+                                                    {{-- <p>{{$user->description}}</p> --}}
                                                 </div>
                                             </div>
                                             <div class="profile-personal-info">
                                                 <h4 class="text-primary mb-4">Personal Information</h4>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                                        <h5 class="f-w-500">Name <span class="pull-right">:</span>
+                                                        <h5 class="f-w-500">Nom <span class="pull-right">:</span>
                                                         </h5>
                                                     </div>
                                                     <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$user->nom .' '. $user->prenom}}</span>
@@ -85,7 +85,7 @@
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                                        <h5 class="f-w-500">Gender <span class="pull-right">:</span></h5>
+                                                        <h5 class="f-w-500">Genre <span class="pull-right">:</span></h5>
                                                     </div>
                                                     <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{($user->gender) ? $user->gender : ''}}</span>
                                                     </div>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 @endsection
