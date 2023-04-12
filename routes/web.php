@@ -11,6 +11,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ServeillantGeneralController;
+use App\Http\Controllers\SalleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,8 +103,10 @@ Route::get('/edit_class/{id}',[ClassController::class,'edit']);
 //End Class controller
 //Start Salle controller
 Route::get('/allSalles',[SalleController::class,'showall'])->name('allsalles');
+Route::get('/allSalles',[SalleController::class,'showall'])->name('allsalles');
 Route::post('/storeSalle',[SalleController::class,'store'])->name('storesalle');
 Route::put('/editSalle/update/{id}', [SalleController::class, 'update'])->name('updatesalle');
+Route::delete('/deleteSalle/{id}', [SalleController::class, 'destroy'])->name('deletesalle');
 Route::get('/edit_salle/{id}',[SalleController::class,'edit']);
 //End Salle controller
 //start routes Niveau

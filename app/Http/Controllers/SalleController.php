@@ -47,4 +47,11 @@ class SalleController extends Controller
         $salle->update($request->all());
         return redirect()->route('allsalles');
     }
+
+    public function destroy($id)
+    {
+        $salle = Salle::find($id);
+        $salle->delete();
+        return redirect()->route('allsalles')->with('success', 'Room deleted successfully.');
+    }
 }
