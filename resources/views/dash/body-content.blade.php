@@ -8,24 +8,24 @@
                     <div class="col-xl-6 col-xxl-6 col-sm-6">
                         <div class="widget-stat card">
                             <div class="card-body">
-                                <h4 class="card-title">Total Students</h4>
+                                <h4 class="card-title">Total d'étudiants</h4>
                                 <h3>3280</h3>
                                 <div class="progress mb-2">
                                     <div class="progress-bar progress-animated bg-primary" style="width: 80%"></div>
                                 </div>
-                                <small>80% Increase in 20 Days</small>
+                                <small>80% Augmentation en 20 jours</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-xxl-6 col-sm-6">
                         <div class="widget-stat card">
                             <div class="card-body">
-                                <h4 class="card-title">New Students</h4>
+                                <h4 class="card-title">Nouveaux étudiants</h4>
                                 <h3>245</h3>
                                 <div class="progress mb-2">
                                     <div class="progress-bar progress-animated bg-warning" style="width: 50%"></div>
                                 </div>
-                                <small>50% Increase in 25 Days</small>
+                                <small>50% Augmentation en 25 jours</small>
                             </div>
                         </div>
                     </div>
@@ -37,28 +37,28 @@
                                 <div class="progress mb-2">
                                     <div class="progress-bar progress-animated bg-red" style="width: 76%"></div>
                                 </div>
-                                <small>76% Increase in 20 Days</small>
+                                <small>76% Augmentation en 20 jours</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-xxl-6 col-sm-6">
                         <div class="widget-stat card">
                             <div class="card-body">
-                                <h4 class="card-title">Fees Collection</h4>
+                                <h4 class="card-title">Total Professeurs</h4>
                                 <h3>25160</h3>
                                 <div class="progress mb-2">
                                     <div class="progress-bar progress-animated bg-success" style="width: 30%"></div>
                                 </div>
-                                <small>30% Increase in 30 Days</small>
+                                {{-- <small>30% Augmentation en 30 jours</small> --}}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>					
+            </div>
             <div class="col-xl-6 col-xxl-6 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Income/Expense Report</h3>
+                        <h3 class="card-title">Rapport de revenus/dépenses</h3>
                     </div>
                     <div class="card-body">
                          <div id="morris_bar_2" class="morris_chart_height"></div>
@@ -68,7 +68,7 @@
             <div class="col-xl-4 col-lg-4 col-xxl-4 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Professors List</h4>
+                        <h4 class="card-title">Liste des professeurs</h4>
                     </div>
                     <div class="card-body">
                         <div class="media mb-3 align-items-center border-bottom pb-3">
@@ -112,11 +112,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-xl-8 col-lg-8 col-xxl-8 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Student List</h4>
+                        <h4 class="card-title">Liste des étudiants</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive recentOrderTable">
@@ -287,9 +287,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-xxl-4 col-md-12">
+            {{-- <div class="col-xl-4 col-lg-4 col-xxl-4 col-md-12">
                 <div class="card">
-                    <div class="card-header">    
+                    <div class="card-header">
                         <h4 class="card-title">Gold medal</h4>
                         <small class="text-success"><i class="fa fa-caret-up"></i> 20% High then last mont</small>
                     </div>
@@ -316,7 +316,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-xxl-4 col-md-6">
                 <div class="card">
-                    <div class="card-header">    
+                    <div class="card-header">
                         <h4 class="card-title">Silver medal</h4>
                         <small class="text-success"><i class="fa fa-caret-up"></i> 20% High then last mont</small>
                     </div>
@@ -343,7 +343,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-xxl-4 col-md-6">
                 <div class="card">
-                    <div class="card-header">    
+                    <div class="card-header">
                         <h4 class="card-title">Bronze medal</h4>
                         <small class="text-success"><i class="fa fa-caret-up"></i> 20% High then last mont</small>
                     </div>
@@ -557,7 +557,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

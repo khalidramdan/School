@@ -39,7 +39,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2 class="card-title">about me</h2>
+                                    <h2 class="card-title">à propos de nous</h2>
                                 </div>
                                 <div class="card-footer pt-0 pb-0 text-center">
                                     <div class="row">
@@ -67,7 +67,7 @@
                             <div class="profile-tab">
                                 <div class="custom-tab-1">
                                     <ul class="nav nav-tabs">
-                                        <li class="nav-item"><a href="#about-me" data-toggle="tab" class="nav-link active show">About Me</a></li>
+                                        <li class="nav-item"><a href="#about-me" data-toggle="tab" class="nav-link active show">à propos de nous</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div id="about-me" class="tab-pane fade active show">
@@ -80,7 +80,7 @@
                                                 <h4 class="text-primary mb-4">Personal Information</h4>
                                                 <div class="row mb-4">
                                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                                        <h5 class="f-w-500">Name <span class="pull-right">:</span>
+                                                        <h5 class="f-w-500">Nom <span class="pull-right">:</span>
                                                         </h5>
                                                     </div>
                                                     <div class="col-lg-9 col-md-8 col-sm-6 col-6"><span>{{$document->nom}}</span>

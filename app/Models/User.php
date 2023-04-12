@@ -52,4 +52,14 @@ class User extends Model implements Authenticatable
     {
         return $this->hasOne(Family::class);
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Posts::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comments::class);
+    }
 }

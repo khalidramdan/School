@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\NiveauController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServeillantGeneralController;
 use App\Http\Controllers\SalleController;
 /*
@@ -133,4 +135,9 @@ Route::get('/emploi',function(){
     return view('Emploi_du_temps.emploi');
 })->name('emploi');
 //end routes Emploi
+//start routes Notification
+Route::resource('/posts',PostController::class);
+Route::resource('/comment',CommentController::class);
+
+
 

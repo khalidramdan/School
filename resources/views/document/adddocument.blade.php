@@ -25,7 +25,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Courses Details</h4>
+                        <h4 class="card-title">Détails des cours</h4>
                     </div>
                     <div class="card-body">
                         <form action="{{$to}}" method="post" enctype="multipart/form-data">
@@ -36,7 +36,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Course Name</label>
+                                        <label class="form-label">Course Nom</label>
                                         <input type="text" class="form-control" value="{{(isset($document))? $document->nom : ''}}" name="nom">
                                     </div>
                                 </div>
@@ -48,13 +48,13 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Contact Number</label>
+                                        <label class="form-label">Numéro de contact</label>
                                         <input type="text" class="form-control" value="{{(isset($document))? $document->tel : ''}}" name="tel">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Course Details</label>
+                                        <label class="form-label">Détails du cours</label>
                                         <textarea class="form-control" name="description" style="resize: none" value="{{(isset($document))? $document->description : ''}}"></textarea>
                                     </div>
                                 </div>

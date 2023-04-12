@@ -10,14 +10,14 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <h4>All Document</h4>
+                        <h4>Tous les documents</h4>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item active"><a href="{{route('alldocument')}}">Document</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0);">All Document</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0);">Tous les documents</a></li>
                     </ol>
                 </div>
             </div>
@@ -25,8 +25,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="nav nav-pills mb-3">
-                        <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
-                        <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Grid View</a></li>
+                        <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">Affichage de liste</a></li>
+                        <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Vue Grille</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-12">
@@ -34,8 +34,8 @@
                         <div id="list-view" class="tab-pane fade active show col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">All Documents  </h4>
-                                    <a href="{{route('createdocument')}}" class="btn btn-primary">+ Add new</a>
+                                    <h4 class="card-title">Tous les documents</h4>
+                                    <a href="{{route('createdocument')}}" class="btn btn-primary">+ Ajouter nouveau</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -46,7 +46,7 @@
                                                     <th>Nom</th>
                                                     <th>Tel</th>
                                                     <th>Max éleve</th>
-                                                    <th>Download</th>
+                                                    <th>Télécharger</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -66,7 +66,7 @@
                                                         <td>{{$document->nom}}</td>
                                                         <td>{{$document->tel}}</td>
                                                         <td>{{$document->student_number}}</td>
-                                                        <td><a href="{{ route('download', ['id' => $document->id]) }}">Download</a></td>
+                                                        <td><a href="{{ route('download', ['id' => $document->id]) }}">Télécharger</a></td>
                                                         <td class="td_actions">
                                                             <a href="{{route('profiledocument',['id' => $document->id])}}" class="btn btn-sm btn-info">
                                                                 <i class="la la-eye">
@@ -133,7 +133,7 @@
                                                             <li class="list-group-item px-0 d-flex justify-content-between">
                                                                 <span class="mb-0">student_number:</span><strong>{{$document->student_number}}</strong></li>
                                                         </ul>
-                                                        <a class="btn btn-info btn-rounded mt-3 px-4" href="{{route('profiledocument', ['id' => $document->id])}}">Read More</a>
+                                                        <a class="btn btn-info btn-rounded mt-3 px-4" href="{{route('profiledocument', ['id' => $document->id])}}">En savoir plus</a>
                                                     </div>
                                                 </div>
                                         </div>
