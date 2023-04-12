@@ -65,13 +65,22 @@
                     emploi
                 </a>
             </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="la la-pencil"></i>
+                    <span class="nav-text">Salles</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{route('allsalles')}}">All Salles</a></li>
+                </ul>
+            </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="la la-graduation-cap"></i>
                     <span class="nav-text">Courses</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('alldocument')}}">All Courses</a></li>
-                    <li><a href="{{route('createdocument')}}">Add Courses</a></li>
+                    <li><a href="{{ route('alldocument') }}">All Courses</a></li>
+                    <li><a href="{{ route('createdocument') }}">Add Courses</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow" href="{{ route('matiere') }}" aria-expanded="false">

@@ -51,7 +51,7 @@
                                                                 <i class="la la-pencil">
                                                                 </i>
                                                             </button>
-                                                            <form method="POST" action="#"
+                                                            <form method="POST" action="{{ route('deletesalle', ['id' => $salle->id]) }}"
                                                                 id="delete_form{{ $loop->iteration }}" class="d-none">
                                                                 @csrf
                                                                 @method('DELETE')
